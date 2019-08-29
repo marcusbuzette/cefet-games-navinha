@@ -17,7 +17,34 @@ public class Collision {
      * @return true se há colisão ou false, do contrário.
      */
     public static final boolean circlesOverlap(Circle c1, Circle c2) {
-        return false;
+        float raioC1 = c1.radius;
+        float posX1 = c1.x;
+        float posY1 = c1.y;
+        
+        float raioC2 = c2.radius;
+        float posX2 = c2.x;
+        float posY2 = c2.y;
+        
+        
+        
+        if ((c1.y - c1.radius) <= (c2.y + c2.radius)){
+            if (c1.x > c2.x && ((c1.x - c2.x) <= (c1.radius + c2.radius) )) {
+                return true;
+            }
+            if (c1.x < c2.x && ((c2.x - c1.x) <= (c2.radius + c1.radius) )) {
+                return true;
+            }
+            if (c1.x == c2.x) {
+                return true;
+            }
+            return false;
+        } else {
+            return false;
+        }
+       
+        
+                
+        
     }
 
     /**
@@ -29,6 +56,15 @@ public class Collision {
      * @return true se há colisão ou false, do contrário.
      */
     public static final boolean rectsOverlap(Rectangle r1, Rectangle r2) {
-        return false;
+        System.out.println("raio c1: " + r1.y);
+//                System.out.println("X c1: " + posX1);
+//                System.out.println("Y c1: " + posY1);
+        if (r1.x == r2.x || (r1.x <= r2.x + r2.width) && (r1.x >= r2.x)) {
+//            if ()
+            return true;
+        } else {
+           return false; 
+        }
+        
     }
 }
