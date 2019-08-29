@@ -56,15 +56,12 @@ public class Collision {
      * @return true se há colisão ou false, do contrário.
      */
     public static final boolean rectsOverlap(Rectangle r1, Rectangle r2) {
-        System.out.println("raio c1: " + r1.y);
-//                System.out.println("X c1: " + posX1);
-//                System.out.println("Y c1: " + posY1);
         if (r1.x == r2.x || (r1.x <= r2.x + r2.width) && (r1.x >= r2.x)) {
-//            if ()
+            if (r1.y + r1.height >= r2.y)
             return true;
         } else {
            return false; 
         }
-        
+        return false;
     }
 }
